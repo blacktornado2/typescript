@@ -27,6 +27,9 @@ var user2 = {
 // 6. tuple: where the number of elements in the array and the type of each element is known(fixed)
 var person = ["John", 25]; // First element is string, second is number
 // We can push more elements in tuple, but there won't be any type checking for them
+// Named tuple
+var graph = [55.2, 41.3];
+console.log(graph[0]);
 // 7. enum: fixed/constants
 // a) Numeric enums - default
 var Color;

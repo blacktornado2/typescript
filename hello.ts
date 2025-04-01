@@ -36,6 +36,8 @@ const user2: { name: string, city: string, age?: number } = {
 // 6. tuple: where the number of elements in the array and the type of each element is known(fixed)
 let person: [string, number] = ["John", 25]; // First element is string, second is number
 // We can push more elements in tuple, but there won't be any type checking for them
+// Named tuple: We can give a temporary name to element, but we cannot access it by that name
+const graph: [x: number, y: number] = [55.2, 41.3];
 
 // 7. enum: fixed/constants
 // a) Numeric enums - default
