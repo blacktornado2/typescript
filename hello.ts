@@ -1,10 +1,10 @@
-function greet(name: string) : string {
+function greet(name: string): string {
     return `Hello ${name}!`;
 };
 
 const userName: string = "Ankit";
 
-console.log(greet(userName));
+greet(userName);  // Hello Ankit
 
 // Basic types in Typescript
 
@@ -12,50 +12,49 @@ console.log(greet(userName));
 const age: number = 25;
 
 // 2. string(text)
-const designation:string = "King";
+const designation: string = "King";
 
 // 3. boolean(true/false)
 const isLoggedIn: boolean = false;
 
 // 4. array: For collections of items of the same type. Two ways to write array types:
-const numbers: number[] = [1,23,90,76,34];
+const numbers: number[] = [1, 23, 90, 76, 34];
 const fruits: Array<string> = ["Apple", "Banana", "Orange"];
 
 // 5. object
-const user: {name: string, city: string} = {
+const user: { name: string, city: string } = {
     name: "Ankit",
     city: "Gurgaon"
 }
 
 // age is an optional property here
-const user2: {name: string, city: string, age?: number} = {
+const user2: { name: string, city: string, age?: number } = {
     name: "Ankit",
     city: "Gurgaon"
 }
 
 // 6. tuple: where the number of elements in the array and the type of each element is known(fixed)
 let person: [string, number] = ["John", 25]; // First element is string, second is number
-// We can push more elements in tupel, but there won't be any type checking for them
+// We can push more elements in tuple, but there won't be any type checking for them
 
 // 7. enum: fixed/constants
-
 // a) Numeric enums - default
 enum Color {
     Red,    // By default, Red = 0
     Green,  // Green = 1
     Blue    // Blue = 2
 }
-console.log(Color.Blue);  // 2
+// console.log(Color.Blue);  // 2
 
 // b) Numeric enums - Initialized(auto-increment)
 enum CardinalDirections {
-    North = 1,
+    North = 3,
     East,
     South,
     West
 }
-console.log(CardinalDirections.North); // 1
-console.log(CardinalDirections.West); // 4
+// console.log(CardinalDirections.North); // 3
+// console.log(CardinalDirections.West); // 6
 
 // c) Numeric enums - Fully-initialized
 enum StatusCodes {
@@ -64,18 +63,18 @@ enum StatusCodes {
     Accepted = 202,
     BadRequest = 400
 }
-console.log(StatusCodes.Success); // 200
+// console.log(StatusCodes.Success); // 200
 
-// d) string enums
+// d) string enums(most used)
 enum Directions {
-    North = 'North',
+    North = "North",
     East = "East",
     South = "South",
     West = "West"
-  };
-console.log(CardinalDirections.West); // West
+};
+// console.log(Directions.West); // West
 
-// 8. any: Disables type checking for a variable. Use it to a minimum
+// 8. any: Disables type checking for a variable. Try not to use it
 const number2: any = "I am a string";
 
 // 9. null and undefined: types that refer to JS primitives null and undefined
@@ -86,7 +85,7 @@ let z: null = null;
 // num2 is an optional property here
 const printNumbers = (num1: number, num2?: number): void => {
     console.log(num1);
-    if(num2) console.log(num2);
+    if (num2) console.log(num2);
 }
 
 // 11. Type Aliases: defining types with a custom name (an Alias)
@@ -95,9 +94,9 @@ type CarType = string;
 type CarModel = string;
 
 type Car = {
-  year: CarYear,
-  type: CarType,
-  model: CarModel
+    year: CarYear,
+    type: CarType,
+    model: CarModel
 };
 
 const carYear: CarYear = 2001;
@@ -105,13 +104,13 @@ const carType: CarType = "Toyota";
 const carModel: CarModel = "Corolla";
 
 const car: Car = {
-  year: carYear,
-  type: carType,
-  model: carModel
+    year: carYear,
+    type: carType,
+    model: carModel
 };
 
 
-// 12. Interfaces: Interfaces are similar to type aliases, except they only apply to object types
+// 12. Interfaces: Interfaces are similar to type aliases, except they only apply to object types, not primitives
 interface Person {
     firstName: string;
     lastName: string;
@@ -126,7 +125,7 @@ const Ankit: Person = {
     occupation: "Developer"
 }
 
-// Extending interfaces: properties of exisiting interface plus something new
+// *** Extending interfaces: properties of exisiting interface plus something new ***
 interface Rectangle {
     height: number,
     width: number
@@ -145,8 +144,11 @@ const coloredRectangle: ColoredRectangle = {
 // Unions(OR): When a value can be more than a single type
 const height: number | string = 100;
 
-// named parameters in functions
+// named parameters in functions, destructuring syntax
 function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
     return dividend / divisor;
 }
 
+// Error in Type Assignment
+let firstName: string = "Dylan"; // type string
+// firstName = 33; // attempts to re-assign the value to a different type
