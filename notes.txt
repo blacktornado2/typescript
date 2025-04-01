@@ -1,0 +1,12 @@
+-> What is TypeScript
+- A strongly typed programming language
+- TypeScript -> superset of JavaScript, TypeScript = JavaScript + static typing
+- Install typesript compiler globally so we can use it: npm i -g typescript
+- Check if the compiler is actually installed or not : tsc -v
+
+-> How it works
+- TypeScript uses compile time type checking
+- Browsers and Node.js can't directly run TypeScript. We need to compile it into regular JavaScript. This is where the tsc (TypeScript Compiler) comes in
+- TypeScript types are only used during development and compilation. They are not part of the JavaScript runtime.
+- The compiler can be configured using a tsconfig.json file
+- To create a new tsconfig.json file: npx tsc --init
