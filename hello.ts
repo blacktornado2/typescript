@@ -154,3 +154,42 @@ function divide({ dividend, divisor }: { dividend: number, divisor: number }) {
 // Error in Type Assignment
 let firstName: string = "Dylan"; // type string
 // firstName = 33; // attempts to re-assign the value to a different type
+
+// Casting is the process of overriding a type
+// Casting with 'as'
+let x: unknown = '56';
+console.log((x as number)); // 56
+
+// Optional Chaining
+interface House {
+    sqft: number;
+    yard?: {
+        sqft: number;
+    };
+}
+
+function printYardSize(house: House) {
+    const yardSize = house.yard?.sqft;  // if house.yard is 
+    console.log("yardSize: ", yardSize);
+    if (yardSize === undefined) {
+        console.log('No yard');
+    } else {
+        console.log(`Yard is ${yardSize} sqft`);
+    }
+}
+
+let home: House = {
+    sqft: 500,
+};
+
+// printYardSize(home); // Prints 'No yard'
+
+
+// TODO: TypeScript Utility Types(explore them) 
+// Partial: changes all the properties in an object to be optional
+// Required: changes all the properties in an object to be required(even if some properties were optional)
+// Record: is a shortcut to defining an object type with a specific key type and value type
+// Omit: removes keys from an object type
+// Pick: removes all but the specified keys from an object type
+// Exclude: removes types from a union
+// ReturnType: extracts the return type of a function type

@@ -108,3 +108,28 @@ function divide(_a) {
 // Error in Type Assignment
 var firstName = "Dylan"; // type string
 // firstName = 33; // attempts to re-assign the value to a different type
+// Casting is the process of overriding a type
+// Casting with 'as'
+var x = '56';
+console.log(x); // 56
+function printYardSize(house) {
+    var _a;
+    var yardSize = (_a = house.yard) === null || _a === void 0 ? void 0 : _a.sqft; // if house.yard is 
+    console.log("yardSize: ", yardSize);
+    if (yardSize === undefined) {
+        console.log('No yard');
+    }
+    else {
+        console.log("Yard is ".concat(yardSize, " sqft"));
+    }
+}
+var home = {
+    sqft: 500,
+};
+// printYardSize(home); // Prints 'No yard'
+function printMileage(mileage) {
+    console.log("Mileage: ".concat(mileage !== null && mileage !== void 0 ? mileage : 'Not Available'));
+}
+printMileage(null); // Prints 'Mileage: Not Available'
+printMileage(0); // Prints 'Mileage: 0'
+printMileage(undefined);
