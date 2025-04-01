@@ -50,13 +50,13 @@ enum Color {
 
 // b) Numeric enums - Initialized(auto-increment)
 enum CardinalDirections {
-    North = 3,
-    East,
+    North,
+    East = 9,
     South,
     West
 }
-// console.log(CardinalDirections.North); // 3
-// console.log(CardinalDirections.West); // 6
+// console.log(CardinalDirections.North); // 0
+// console.log(CardinalDirections.West); // 11(9+1+1)
 
 // c) Numeric enums - Fully-initialized
 enum StatusCodes {

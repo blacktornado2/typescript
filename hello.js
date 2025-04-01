@@ -27,9 +27,8 @@ var user2 = {
 // 6. tuple: where the number of elements in the array and the type of each element is known(fixed)
 var person = ["John", 25]; // First element is string, second is number
 // We can push more elements in tuple, but there won't be any type checking for them
-// Named tuple
+// Named tuple: We can give a temporary name to element, but we cannot access it by that name
 var graph = [55.2, 41.3];
-console.log(graph[0]);
 // 7. enum: fixed/constants
 // a) Numeric enums - default
 var Color;
@@ -42,13 +41,13 @@ var Color;
 // b) Numeric enums - Initialized(auto-increment)
 var CardinalDirections;
 (function (CardinalDirections) {
-    CardinalDirections[CardinalDirections["North"] = 3] = "North";
-    CardinalDirections[CardinalDirections["East"] = 4] = "East";
-    CardinalDirections[CardinalDirections["South"] = 5] = "South";
-    CardinalDirections[CardinalDirections["West"] = 6] = "West";
+    CardinalDirections[CardinalDirections["North"] = 0] = "North";
+    CardinalDirections[CardinalDirections["East"] = 9] = "East";
+    CardinalDirections[CardinalDirections["South"] = 10] = "South";
+    CardinalDirections[CardinalDirections["West"] = 11] = "West";
 })(CardinalDirections || (CardinalDirections = {}));
-// console.log(CardinalDirections.North); // 3
-// console.log(CardinalDirections.West); // 6
+// console.log(CardinalDirections.North); // 0
+// console.log(CardinalDirections.West); // 11(9+1+1)
 // c) Numeric enums - Fully-initialized
 var StatusCodes;
 (function (StatusCodes) {
